@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{86E79FAE-37E1-A124-35E5-4BC8DC33A767}") = "pitfall", "Assembly-CSharp.csproj", "{AE18A5C4-086B-5807-C821-CF1C8112B816}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE18A5C4-086B-5807-C821-CF1C8112B816}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE18A5C4-086B-5807-C821-CF1C8112B816}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE18A5C4-086B-5807-C821-CF1C8112B816}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE18A5C4-086B-5807-C821-CF1C8112B816}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
