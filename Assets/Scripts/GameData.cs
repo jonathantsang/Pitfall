@@ -20,16 +20,14 @@ public class GameData : MonoBehaviour {
 
 	[System.Serializable]
 	public class levelData{
-		public int startPointX;
-		public int startPointY;
-		public int endPointX;
-		public int endPointY;
+		public Transform startPoint;
+		public Transform endPoint;
 	}
 		
 
 	// Use this for initialization
 	void Start () {
-		Instantiate (player, new Vector2 (LevelData [0].startPointX, LevelData [0].startPointY), Quaternion.identity);
+		Instantiate (player, LevelData[0].startPoint.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
