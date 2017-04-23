@@ -14,17 +14,6 @@ public class spawnGrid : MonoBehaviour {
 	private int wid = 5;
 	private int hei = 5;
 
-	[System.Serializable]
-	public class boundary{
-		public int width;
-		public int height;
-
-		public boundary(int w, int h){
-			width = w;
-			height = h;
-		}
-	}
-
 	// Use this for initialization
 	void Start () {
 		bounds = new boundary (wid, hei);
