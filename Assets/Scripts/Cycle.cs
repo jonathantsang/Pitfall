@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Cycle {
 
-	// min and max both inclusive
+	// min is inclusive, max is exclusive
 	public int minNum;
 	public int maxNum;
 	public int increment;

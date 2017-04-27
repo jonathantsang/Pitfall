@@ -21,10 +21,10 @@ public class TimedObject : MonoBehaviour {
 			Debug.Log ("timedCycle is null");
 			return;
 		} else {
+			// Adds the increment
 			timedCycle.currentNum += timedCycle.increment;
-			// If the increment pushes the current past the max
-			while (timedCycle.currentNum > timedCycle.maxNum) {
-				timedCycle.currentNum -= timedCycle.maxNum;
+			// Finds the overflow if needed
+			timedCycle.currentNum = timedCycle.minNum + timedCycle.currentNum % timedCycle.maxNum;
 			}
 		}
 
