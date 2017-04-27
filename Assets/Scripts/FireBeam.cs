@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireColumnBeam : MonoBehaviour {
+public class FireBeam : TimedObject {
 
 	private GameObject beam;
 
@@ -10,6 +10,8 @@ public class FireColumnBeam : MonoBehaviour {
 	void Start () {
 		// Beam is second child
 		beam = gameObject.transform.GetChild (1).gameObject;
+		// cycle object is 0 to 4, increasing by 1 each time
+		timedCycle = new Cycle (0, 4, 1);
 	}
 	
 	// Update is called once per frame

@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour {
 	public GameObject player;
 
 	public static int level;
+	public static int numberMoves;
 	public LevelData[] levelData;
 
 	void Awake(){

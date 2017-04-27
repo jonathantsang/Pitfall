@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnGrid : MonoBehaviour {
+public class SpawnGrid : MonoBehaviour {
 
 	public GameObject tile;
 

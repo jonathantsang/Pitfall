@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : movingObject {
+public class Player : MovingObject {
 
 	// Use this for initialization
 	void Start () {

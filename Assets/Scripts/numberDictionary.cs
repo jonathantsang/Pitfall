@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class numberDictionary : MonoBehaviour {
+public class NumberDictionary : MonoBehaviour {
 
 	public Sprite[] redNumSprites;
 	public Sprite[] blueNumSprites;
