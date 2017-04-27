@@ -25,8 +25,7 @@ public class TimedObject : MonoBehaviour {
 			timedCycle.currentNum += timedCycle.increment;
 			// Finds the overflow if needed
 			timedCycle.currentNum = timedCycle.minNum + timedCycle.currentNum % timedCycle.maxNum;
-			}
 		}
-
 	}
+		
 }
