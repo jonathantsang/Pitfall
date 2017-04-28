@@ -39,22 +39,22 @@ public class MovingObject : MonoBehaviour {
 		timeElapsed += Time.deltaTime;
 		if (Input.GetKey ("w") && timeElapsed >= timeLimit && validMovement(1)) {
 			Debug.Log ("go up");
-			GameData.numberMoves += 1;
+			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x, rb2d.position.y + 1));
 			timeElapsed = 0;
 		} else if (Input.GetKey ("a") && timeElapsed >= timeLimit && validMovement(4)) {
 			Debug.Log ("go left");
-			GameData.numberMoves += 1;
+			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x - 1, rb2d.position.y));
 			timeElapsed = 0;
 		} else if (Input.GetKey ("s") && timeElapsed >= timeLimit && validMovement(3)) {
 			Debug.Log ("go down");
-			GameData.numberMoves += 1;
+			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x, rb2d.position.y - 1));
 			timeElapsed = 0;
 		} else if (Input.GetKey ("d") && timeElapsed >= timeLimit && validMovement(2)) {
 			Debug.Log ("go right");
-			GameData.numberMoves += 1;
+			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x + 1, rb2d.position.y ));
 			timeElapsed = 0;
 		}

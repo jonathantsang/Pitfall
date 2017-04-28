@@ -44,4 +44,14 @@ public class GameData : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	// for a move of y increment it by that and add to each timed moving object
+	public static void moves(int y){
+		GameData.numberMoves += y;
+		// Find all objects affected by time
+		GameObject[] objs = GameObject.FindGameObjectsWithTag ("timed");
+		foreach (GameObject timedObj in objs) {
+			timedObj.GetComponent<TimedObject> ().incrementTimedCycle ();
+		}
+	}
 }
