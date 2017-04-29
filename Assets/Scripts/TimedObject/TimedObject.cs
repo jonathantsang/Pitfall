@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TimedObject : MonoBehaviour {
 
-	public Cycle timedCycle;
-	public NumberDictionary numDict;
+	protected Cycle timedCycle;
+	protected Cycle hazardCycle;
+	protected NumberDictionary numDict;
 
-	private GameObject number;
+	protected GameObject number;
 
 	// Use this for initialization
-	public void Start () {
+	void Start () {
 		
 	}
 	
@@ -19,7 +20,7 @@ public class TimedObject : MonoBehaviour {
 		
 	}
 
-	public void incrementTimedCycle(){
+	public virtual void incrementTimedCycle(){
 		if (timedCycle == null) {
 			Debug.Log ("timedCycle is null");
 			return;

@@ -47,12 +47,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Cycle.cs" />
-     <Compile Include="Assets\Scripts\FireBeam.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\NumberDictionary.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
      <Compile Include="Assets\Scripts\SpawnGrid.cs" />
-     <Compile Include="Assets\Scripts\TimedObject.cs" />
+     <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
+     <Compile Include="Assets\Scripts\TimedObject\FireBeam.cs" />
+     <Compile Include="Assets\Scripts\TimedObject\Spikes.cs" />
+     <Compile Include="Assets\Scripts\TimedObject\TimedObject.cs" />
      <Compile Include="Assets\Scripts\bounds.cs" />
      <Compile Include="Assets\Scripts\movingObject.cs" />
  <Reference Include="UnityEngine.UI">

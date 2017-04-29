@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameData : MonoBehaviour {
 
@@ -30,14 +31,24 @@ public class GameData : MonoBehaviour {
 		public boundary levelBounds;
 	}
 
-	// On LEVEL LOAD *** FIX *** the finding of start and end point
+	// On LEVEL LOAD the finding of start and end point
+	void OnEnable(){
+		// Add delegates to this
+		SceneManager.sceneLoaded += findSpawnPoints;
+	}
+
+	void OnDestroy(){
+		SceneManager.sceneLoaded -= findSpawnPoints;
+	}
 
 	// Use this for initialization
 	void Start () {
+		// First time is free
 		levelData [level].startPoint = GameObject.FindGameObjectWithTag ("start").transform;
 		levelData [level].endPoint = GameObject.FindGameObjectWithTag ("end").transform;
+		// Done in SpawnPlayer script now
+		// Instantiate (player, levelData[0].startPoint.position, Quaternion.identity);
 
-		Instantiate (player, levelData[0].startPoint.position, Quaternion.identity);
 	}
 	
 	// Update is called once per frame
@@ -51,8 +62,20 @@ public class GameData : MonoBehaviour {
 		// Find all objects affected by time
 		GameObject[] objs = GameObject.FindGameObjectsWithTag ("timed");
 		foreach (GameObject timedObj in objs) {
-			timedObj.GetComponent<TimedObject> ().incrementTimedCycle ();
+			// Check if the object is a firebeam object, check for others
+			if (timedObj.GetComponent<FireBeam> () == null) {
+				timedObj.GetComponent<TimedObject> ().incrementTimedCycle ();
+			} else {
+				timedObj.GetComponent<FireBeam> ().incrementTimedCycle ();
+			}
 			timedObj.GetComponent<TimedObject> ().updateNumber ();
 		}
 	}
+
+	void findSpawnPoints(Scene scene, LoadSceneMode mode){
+		levelData [level].startPoint = GameObject.FindGameObjectWithTag ("start").transform;
+		levelData [level].endPoint = GameObject.FindGameObjectWithTag ("end").transform;
+	}
+
+
 }

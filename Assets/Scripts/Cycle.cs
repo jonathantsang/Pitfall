@@ -33,4 +33,12 @@ public class Cycle {
 		increment = increases;
 		currentNum = startNum;
 	}
+
+	// Used for mainly bounds of hazards
+	public Cycle(int start, int end){
+		minNum = start;
+		maxNum = end;
+		increment = 1;
+		currentNum = minNum;
+	}
 }
