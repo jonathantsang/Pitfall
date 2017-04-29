@@ -52,6 +52,7 @@ public class GameData : MonoBehaviour {
 		GameObject[] objs = GameObject.FindGameObjectsWithTag ("timed");
 		foreach (GameObject timedObj in objs) {
 			timedObj.GetComponent<TimedObject> ().incrementTimedCycle ();
+			timedObj.GetComponent<TimedObject> ().updateNumber ();
 		}
 	}
 }

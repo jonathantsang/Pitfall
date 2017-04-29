@@ -5,9 +5,12 @@ using UnityEngine;
 public class TimedObject : MonoBehaviour {
 
 	public Cycle timedCycle;
+	public NumberDictionary numDict;
+
+	private GameObject number;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		
 	}
 	
@@ -27,5 +30,21 @@ public class TimedObject : MonoBehaviour {
 			timedCycle.currentNum = timedCycle.minNum + timedCycle.currentNum % timedCycle.maxNum;
 		}
 	}
+
+	// Make sure the number is the first child
+	public void updateNumber(){
+		// number is first child
+		number = gameObject.transform.GetChild (0).gameObject;
+		// Assign the number to the sprite
+		number.GetComponent<SpriteRenderer> ().sprite = numDict.redNumSprites[timedCycle.currentNum];
+	}
+
+	public void findNumDict(){
+		numDict = GameObject.FindGameObjectWithTag ("numDict").GetComponent<NumberDictionary>();
+		if (numDict == null) {
+			Debug.Log ("error finding numdict");
+		}
+	}
+
 		
 }
