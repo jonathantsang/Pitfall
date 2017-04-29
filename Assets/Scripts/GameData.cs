@@ -27,8 +27,8 @@ public class GameData : MonoBehaviour {
 		public Transform startPoint;
 		public Transform endPoint;
 
-		// boundary object
-		public boundary levelBounds;
+		// Boundary object
+		public Boundary levelBounds;
 	}
 
 	// On LEVEL LOAD the finding of start and end point
@@ -62,6 +62,9 @@ public class GameData : MonoBehaviour {
 		// Find all objects affected by time
 		GameObject[] objs = GameObject.FindGameObjectsWithTag ("timed");
 		foreach (GameObject timedObj in objs) {
+			// First, turn it off for all immediately, always second child is hazard collider
+			timedObj.transform.GetChild(1).gameObject.SetActive(false);
+
 			// Check if the object is a firebeam object, check for others
 			if (timedObj.GetComponent<FireBeam> () == null) {
 				timedObj.GetComponent<TimedObject> ().incrementTimedCycle ();

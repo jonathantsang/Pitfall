@@ -15,11 +15,15 @@ public class PlayerCollision : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	void OnTriggerStay2D(Collider2D col){
 		if (col.gameObject.CompareTag ("hurt")) {
 			Debug.Log ("reload level");
 			SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
-		} else if (col.gameObject.CompareTag ("end")) {
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+		if (col.gameObject.CompareTag ("end")) {
 			Debug.Log ("finished level");
 		}
 	}

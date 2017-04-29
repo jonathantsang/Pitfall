@@ -6,7 +6,7 @@ public class SpawnGrid : MonoBehaviour {
 
 	public GameObject tile;
 
-	private boundary bounds;
+	private Boundary bounds;
 	private Vector2 curPos;
 	private Transform boardHolder;
 	public List<Vector3> gridPositions = new List<Vector3> ();
@@ -16,7 +16,7 @@ public class SpawnGrid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		bounds = new boundary (wid, hei);
+		bounds = new Boundary (wid, hei);
 		curPos = new Vector2(-2, -2);
 		generateGrid ();
 	}

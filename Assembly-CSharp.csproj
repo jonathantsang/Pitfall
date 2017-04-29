@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Boundary.cs" />
      <Compile Include="Assets\Scripts\Cycle.cs" />
      <Compile Include="Assets\Scripts\GameData.cs" />
      <Compile Include="Assets\Scripts\NumberDictionary.cs" />
@@ -57,7 +58,6 @@
      <Compile Include="Assets\Scripts\TimedObject\Spikes.cs" />
      <Compile Include="Assets\Scripts\TimedObject\TimedObject.cs" />
      <Compile Include="Assets\Scripts\UIText.cs" />
-     <Compile Include="Assets\Scripts\boundary.cs" />
      <Compile Include="Assets\Scripts\movingObject.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

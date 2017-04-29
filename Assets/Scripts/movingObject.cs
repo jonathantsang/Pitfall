@@ -9,7 +9,7 @@ public class MovingObject : MonoBehaviour {
 	private float timeLimit = 0.15f;
 
 	// All moving objects need to have a boundary on where they can move
-	private boundary levelBounds;
+	private Boundary levelBounds;
 
 	// References
 	private Rigidbody2D rb2d;
@@ -38,22 +38,22 @@ public class MovingObject : MonoBehaviour {
 	public void movement(){
 		timeElapsed += Time.deltaTime;
 		if (Input.GetKeyDown ("w") && timeElapsed >= timeLimit && validMovement(1)) {
-			Debug.Log ("go up");
+			// Make sure player moves before the hazards are updated to allow for movement between
 			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x, rb2d.position.y + 1));
 			timeElapsed = 0;
 		} else if (Input.GetKeyDown ("a") && timeElapsed >= timeLimit && validMovement(4)) {
-			Debug.Log ("go left");
+			// Make sure player moves before the hazards are updated to allow for movement between
 			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x - 1, rb2d.position.y));
 			timeElapsed = 0;
 		} else if (Input.GetKeyDown ("s") && timeElapsed >= timeLimit && validMovement(3)) {
-			Debug.Log ("go down");
+			// Make sure player moves before the hazards are updated to allow for movement between
 			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x, rb2d.position.y - 1));
 			timeElapsed = 0;
 		} else if (Input.GetKeyDown ("d") && timeElapsed >= timeLimit && validMovement(2)) {
-			Debug.Log ("go right");
+			// Make sure player moves before the hazards are updated to allow for movement between
 			GameData.moves (1);
 			rb2d.MovePosition (new Vector2 (rb2d.position.x + 1, rb2d.position.y ));
 			timeElapsed = 0;
@@ -70,26 +70,26 @@ public class MovingObject : MonoBehaviour {
 		if (i == 1) {
 			// Minus one because the grid starts at 0 index
 			if (curPos.y + 1 > yBoundary - 1) {
-				Debug.Log ("error");
+				Debug.Log ("out of bounds");
 				return false;
 			}
 			return true;
 		} else if (i == 2) {
 			// Minus one because the grid starts at 0 index
 			if (curPos.x + 1 > xBoundary - 1) {
-				Debug.Log ("error");
+				Debug.Log ("out of bounds");
 				return false;
 			}
 			return true;
 		} else if (i == 3) {
 			if (curPos.y - 1 < 0) {
-				Debug.Log ("error");
+				Debug.Log ("out of bounds");
 				return false;
 			}
 			return true;
 		} else if (i == 4) {
 			if (curPos.x -1  < 0) {
-				Debug.Log ("error");
+				Debug.Log ("out of bounds");
 				return false;
 			}
 			return true;
